@@ -1,0 +1,12 @@
+{
+  "name": "اربح نقاط",
+  "short_name": "اربح نقاط",
+  "description": "نسخة تجريبية عربية لتجربة المهام والنقاط",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#101827"
+}

@@ -1,76 +1,92 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>PRO KING STORE</title>
-  <meta name="description" content="PRO KING STORE - متجر منتجات متنوعة">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>اربح نقاط — نسخة تجريبية</title>
+<style>
+:root{--bg:#0b1220;--panel:#141e30;--panel2:#1b2940;--text:#f5f7fb;--muted:#a9b6ca;--green:#4ade80;--blue:#60a5fa;--line:#2a3952;--gold:#facc15}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#101827,#0b1220 55%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;min-height:100vh}
+.wrap{max-width:520px;margin:auto;padding:18px 15px 96px}.top{display:flex;align-items:center;justify-content:space-between;margin:8px 0 20px}.brand{font-size:22px;font-weight:850;letter-spacing:-.4px}.brand span{color:var(--green)}.demo{font-size:11px;background:#3b2f0b;color:#fde68a;border:1px solid #66531a;border-radius:20px;padding:6px 10px}
+.hero{background:linear-gradient(135deg,#176b4a,#173f58);border:1px solid #2a8a68;border-radius:24px;padding:21px;box-shadow:0 12px 30px #0003}.eyebrow{color:#c6f6db;font-size:13px}.balance{font-size:42px;font-weight:900;margin:5px 0 0;line-height:1.2}.unit{font-size:15px;color:#c6f6db;font-weight:600}.hero-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:18px}.pill{font-size:12px;background:#ffffff18;border-radius:12px;padding:8px 10px}.btn{border:0;border-radius:14px;padding:13px 15px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}.btn:active{transform:scale(.98)}.primary{background:var(--green);color:#082416}.secondary{background:#26364f;color:var(--text);border:1px solid #3b4b65}.small{padding:10px 12px;font-size:13px}.section{margin-top:25px}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.section h2{font-size:18px;margin:0}.hint{font-size:12px;color:var(--muted)}.task,.reward,.stat{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;align-items:center;gap:12px;margin-bottom:10px}.ico{width:46px;height:46px;display:grid;place-items:center;background:var(--panel2);border-radius:14px;font-size:23px;flex-shrink:0}.details{flex:1;min-width:0}.details b{display:block;font-size:15px}.details p{margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.5}.points{color:var(--gold);font-size:13px;font-weight:800;white-space:nowrap}.task .btn{margin-top:10px}.taskbody{flex:1}.taskbody .rowline{display:flex;justify-content:space-between;gap:8px;align-items:center}.done{color:var(--green);font-size:12px;font-weight:700}.nav{position:fixed;bottom:0;left:0;right:0;background:#0c1423ed;border-top:1px solid var(--line);backdrop-filter:blur(12px);display:flex;justify-content:center;gap:0;padding:9px max(8px,env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom));z-index:5}.nav button{flex:1;max-width:170px;background:none;border:0;color:var(--muted);font-family:inherit;font-size:12px;padding:7px 4px;cursor:pointer}.nav button.active{color:var(--green)}.nav .ni{display:block;font-size:19px;margin-bottom:3px}.view{display:none}.view.active{display:block}.notice{background:#172438;border:1px solid #30425d;border-radius:15px;padding:12px 14px;color:#c8d5e8;font-size:12px;line-height:1.7;margin-top:15px}.history-item{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.plus{color:var(--green);font-weight:800}.minus{color:#fca5a5;font-weight:800}.empty{padding:25px;text-align:center;color:var(--muted);background:var(--panel);border-radius:18px}.footer{text-align:center;color:#718198;font-size:11px;margin:25px 0 5px}
+</style>
 </head>
 <body>
-<header class="topbar">
-  <div class="brand"><img src="assets/pro-logo.png" alt="PRO"><span>PRO KING STORE</span></div>
-  <button id="cartBtn" class="cart">🛒 السلة <b id="cartCount">0</b></button>
-</header>
-
-<section class="hero">
-  <div>
-    <span class="eyebrow">PRO KING STORE</span>
-    <h1>كل اللي تحتاجه<br><strong>بمكان واحد</strong></h1>
-    <p>منتجات متنوعة، عروض مستمرة، وطلب سهل مع الدفع عند الاستلام.</p>
-    <a href="#products" class="cta">تسوق الآن</a>
-  </div>
-  <img src="assets/pro-logo.png" alt="PRO KING" class="hero-logo">
-</section>
-
-<nav class="categories">
-  <button class="active" data-cat="all">الكل</button>
-  <button data-cat="electronics">إلكترونيات</button>
-  <button data-cat="fashion">ملابس</button>
-  <button data-cat="home">منزل</button>
-  <button data-cat="accessories">إكسسوارات</button>
+<div class="wrap">
+  <header class="top"><div class="brand">اربح <span>نقاط</span> ✦</div><div class="demo">نسخة تجريبية</div></header>
+  <main>
+    <section id="home" class="view active">
+      <div class="hero">
+        <div class="eyebrow">رصيدك التجريبي</div>
+        <div class="balance"><span id="balance">0</span> <span class="unit">نقطة</span></div>
+        <div class="hero-foot"><span class="pill">⭐ استمر واجمع نقاطك</span><button id="dailyBtn" class="btn primary small">مكافأة اليوم +10</button></div>
+      </div>
+      <div class="section">
+        <div class="section-head"><h2>مهام اليوم</h2><span class="hint">مهام تجريبية</span></div>
+        <div class="task">
+          <div class="ico">📖</div><div class="taskbody"><div class="rowline"><b>تعرّف على التطبيق</b><span class="points">+5 نقاط</span></div><p>افتح المهمة واقرأ التنبيه التعريفي.</p><button class="btn secondary small" data-task="intro">إكمال المهمة</button></div>
+        </div>
+        <div class="task">
+          <div class="ico">🧠</div><div class="taskbody"><div class="rowline"><b>سؤال سريع</b><span class="points">+5 نقاط</span></div><p>كم يساوي 2 + 3؟ اختبر المهمة التجريبية.</p><button class="btn secondary small" data-task="quiz">جاوب واجمع</button></div>
+        </div>
+        <div class="task">
+          <div class="ico">📅</div><div class="taskbody"><div class="rowline"><b>مكافأة تسجيل يومي</b><span class="points">+10 نقاط</span></div><p>مرة واحدة باليوم على هذا الجهاز.</p><button class="btn secondary small" id="dailyBtn2">استلام المكافأة</button></div>
+        </div>
+      </div>
+      <div class="notice">تنبيه: النقاط هنا للتجربة فقط وليست أموالاً حقيقية. لا توجد إعلانات مدفوعة أو تحويلات مالية في هذه النسخة.</div>
+    </section>
+    <section id="rewards" class="view">
+      <div class="section-head"><h2>المكافآت</h2><span class="hint">تجريبية فقط</span></div>
+      <div class="reward"><div class="ico">🎁</div><div class="details"><b>مكافأة ترحيبية</b><p>تجربة واجهة استبدال النقاط، بدون دفع حقيقي.</p></div><div class="points">50 نقطة</div></div>
+      <button class="btn primary" style="width:100%" id="redeemBtn">جرّب استبدال 50 نقطة</button>
+      <div class="notice">ما نكدر نوعد بسحب فلوس قبل توفير مصدر دخل حقيقي وشريك دفع يقبل المستخدمين بالعراق. زر الاستبدال هنا للتجربة فقط.</div>
+    </section>
+    <section id="history" class="view">
+      <div class="section-head"><h2>سجل النقاط</h2><span class="hint">على هذا الجهاز</span></div>
+      <div id="historyList"></div>
+      <button class="btn secondary" id="resetBtn" style="width:100%;margin-top:14px">إعادة ضبط النسخة التجريبية</button>
+      <p class="hint" style="line-height:1.7">ملاحظة: بيانات النسخة الأولية محفوظة محلياً في متصفحك فقط؛ حذف بيانات المتصفح قد يمسحها.</p>
+    </section>
+  </main>
+  <div class="footer">اربح نقاط • نموذج أولي غير متصل بخادم</div>
+</div>
+<nav class="nav">
+  <button class="active" data-view="home"><span class="ni">🏠</span>الرئيسية</button>
+  <button data-view="rewards"><span class="ni">🎁</span>المكافآت</button>
+  <button data-view="history"><span class="ni">📜</span>السجل</button>
 </nav>
-
-<main id="products">
-  <div class="section-head">
-    <h2>المنتجات</h2>
-    <input id="search" type="search" placeholder="ابحث عن منتج...">
-  </div>
-  <div id="grid" class="grid"></div>
-</main>
-
-<div id="cartPanel" class="drawer">
-  <div class="drawer-head"><h2>سلة المشتريات</h2><button id="closeCart">✕</button></div>
-  <div id="cartItems"></div>
-  <div class="total">المجموع: <strong id="total">0</strong> د.ع</div>
-  <button id="checkoutBtn" class="cta full">إتمام الطلب</button>
-</div>
-<div id="overlay" class="overlay"></div>
-
-<div id="checkout" class="modal">
-  <div class="modal-card">
-    <button id="closeCheckout" class="x">✕</button>
-    <h2>بيانات الطلب</h2>
-    <p>الدفع عند الاستلام</p>
-    <form id="orderForm">
-      <input required name="name" placeholder="الاسم الكامل">
-      <input required name="phone" inputmode="tel" placeholder="رقم الهاتف">
-      <select required name="province">
-        <option value="">اختر المحافظة</option>
-        <option>بغداد</option><option>البصرة</option><option>نينوى</option>
-        <option>أربيل</option><option>النجف</option><option>كربلاء</option>
-        <option>الأنبار</option><option>ديالى</option><option>بابل</option>
-        <option>واسط</option><option>صلاح الدين</option><option>كركوك</option>
-        <option>ذي قار</option><option>ميسان</option><option>المثنى</option><option>الديوانية</option><option>دهوك</option><option>السليمانية</option>
-      </select>
-      <textarea required name="address" placeholder="العنوان بالتفصيل"></textarea>
-      <button class="cta full" type="submit">تأكيد الطلب</button>
-    </form>
-    <div id="success" class="success" hidden>تم تسجيل طلبك بنجاح ✅</div>
-  </div>
-</div>
-
-<footer>© 2026 PRO KING STORE — جميع الحقوق محفوظة</footer>
-<script src="script.js"></script>
+<script>
+const KEY='arbah_nuqat_demo_v1';
+const today=()=>new Date().toLocaleDateString('en-CA');
+let state;
+try{state=JSON.parse(localStorage.getItem(KEY))||null}catch(e){state=null}
+if(!state) state={balance:0,done:[],daily:'',history:[]};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){} render()}
+function addPoints(label,n){state.balance+=n;state.history.unshift({label,amount:n,time:new Date().toLocaleString('ar-IQ')});save()}
+function render(){
+ document.getElementById('balance').textContent=state.balance;
+ const got=state.daily===today();
+ ['dailyBtn','dailyBtn2'].forEach(id=>{const b=document.getElementById(id);b.disabled=got;b.textContent=got?'تم استلامها اليوم':'استلام المكافأة';b.classList.toggle('primary',!got);b.classList.toggle('secondary',got)});
+ document.querySelectorAll('[data-task]').forEach(b=>{const done=state.done.includes(b.dataset.task);b.disabled=done;b.textContent=done?'تم الإكمال':'إكمال المهمة';b.classList.toggle('primary',!done);b.classList.toggle('secondary',done)});
+ const list=document.getElementById('historyList');
+ list.innerHTML=state.history.length?state.history.map(x=>`<div class="history-item"><div>${esc(x.label)}<div class="hint">${esc(x.time)}</div></div><div class="${x.amount<0?'minus':'plus'}">${x.amount>0?'+':''}${x.amount} نقطة</div></div>`).join(''):'<div class="empty">بعد ما عندك حركات. كمّل أول مهمة حتى يظهر السجل هنا.</div>';
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function daily(){if(state.daily===today()){alert('استلمت مكافأة اليوم من قبل.');return}state.daily=today();addPoints('مكافأة التسجيل اليومي',10)}
+document.getElementById('dailyBtn').onclick=daily;document.getElementById('dailyBtn2').onclick=daily;
+document.querySelectorAll('[data-task]').forEach(b=>b.onclick=()=>{const id=b.dataset.task;if(state.done.includes(id))return;if(id==='intro')alert('أهلاً بيك! هاي نسخة تجريبية، والنقاط مو فلوس حقيقية.');if(id==='quiz'){const a=prompt('كم يساوي 2 + 3؟');if(a===null)return;if(a.trim()!=='5'){alert('مو صحيح، جرّب مرة ثانية.');return}}state.done.push(id);addPoints(id==='intro'?'مهمة التعرف على التطبيق':'إجابة السؤال السريع',5)});
+document.getElementById('redeemBtn').onclick=()=>{alert('هاي تجربة فقط: ما راح يتم خصم نقاط أو إرسال أموال حقيقية. نضيف الاستبدال الحقيقي بعد تجهيز مصدر دخل وطريقة دفع موثوقة.');};
+document.getElementById('resetBtn').onclick=()=>{if(confirm('متأكد تريد تمسح كل بيانات النسخة التجريبية؟')){state={balance:0,done:[],daily:'',history:[]};save()}};
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(b.dataset.view).classList.add('active');document.querySelectorAll('[data-view]').forEach(n=>n.classList.toggle('active',n===b));});
+render();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
+</script>
 </body>
 </html>
